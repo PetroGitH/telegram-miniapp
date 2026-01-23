@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UtF-8">
+    <title>CBd'ouFirst</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            background:black;
+            color: #22c55e;
+            font-family: Arial;
+            text-align: center;
+            padding: 20px;
+        }
+    button{
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        background: #22c55e;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    
+<h2>CBd'OUFirst</h2>
+<div1>Bonjour, 
+service de livraison de 9h-23h pre-commande 5€ offert</div1>
+<button onclick="open()"> Menu </button>
+<button onclick="openSnap()"> Snapchat </button>
+<button onclick="contact()">Contact </button>
+<button onclick="sav()">SAV </button>
+
+<script>
+    const tg = window.Telegram.Webapp;
+    tg.expand();
+
+    function open() {
+        window.open("https://sitemeenu.com","_blank")
+    }
+
+    function openSnap() {
+        window.open("https://snapchat.com/add/ton_snap", "_blank");
+    }
+
+    function contact() {
+        window.open("https://t.me/ton_contact", "_blank");
+    }
+
+    function sav() {
+        tg.showAlert("Un agent va te contacter");
+    }
+</script>
+
+</body>
+</html> 
+
