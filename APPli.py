@@ -12,7 +12,7 @@ def main_menu():
     return InlineKeyboardMarkup([
         [
             InlineKeyboardButton("Contact", url="https://aw.me/33646354340"),
-            InlineKeyboardButton("CBd'ouFirst", callback_data="CBd'ou")
+            InlineKeyboardButton("Ton_projet", callback_data="Ton projet")
         ],
         [
             InlineKeyboardButton("facture", callback_data="facture"),
@@ -20,7 +20,7 @@ def main_menu():
         ]
     ])
 
-def CBd_ou_menu():
+def Ton_Projet():
     return InlineKeyboardMarkup([
         [InlineKeyboardButton("Superskunk - 10€", callback_data="prod_amnesia")],
         [InlineKeyboardButton("flitr x3", callback_data="prod_flitrx3")],
@@ -33,7 +33,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await context.bot.send_photo(
             chat_id=update.effective_chat.id,
             photo=photo,
-            caption="Bienvenue sur CBD'ouFirst\n\nChoisis une option",
+            caption="Bienvenue sur Ton_projet \n\nChoisis une option",
             reply_markup=main_menu()
     )
 
@@ -41,26 +41,26 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
-    if query.data == "CBd'ou":
-        await query.edit_message_reply_markup(reply_markup=CBd_ou_menu())
+    if query.data == "Ton_projet":
+        await query.edit_message_reply_markup(reply_markup=ton_projet_boutique())
 
     elif query.data =="back_main":
         await query.edit_message_reply_markup(reply_markup=main_menu())
 
     elif query.data == "contact":
-        await query.message.reply_text("Contact on whatasapp : +33 6 46 35 49 40")
+        await query.message.reply_text("Contact on whatasapp : +33 6 00 00 00 00")
 
     elif query.data == "facture":
-        await query.message.reply_text("facture: willgboua@gmail.com")
+        await query.message.reply_text("facture: tonadresse@mail.com")
     
     elif query.data == "infos":
-        await query.message.reply_text("Livraison en 30min -> 1h30 a partir de 150€ livraison offerte ")
+        await query.message.reply_text("message d'information ")
 
     elif query.data == "Menu":
         await query.edit_message_caption(
             caption="Nos produit",
             parse_mode="Mardown",
-            reply_markup=CBd_ou_menu()
+            reply_markup=Ton_projet()
         )
     elif query.data == "prod_amnesia":
         await query.edit_message_caption(
@@ -154,3 +154,4 @@ def main():
 if __name__=="__main__":
 
     main()
+
