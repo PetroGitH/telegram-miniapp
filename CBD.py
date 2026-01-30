@@ -3,7 +3,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandle
 import os 
 
 
-TOKEN = "8279074674:AAGeLJhblPRx_MOyvqZ9wJhS80ieL_hbiRU"
+TOKEN = "TON_TOKEN"
 
 base_dir= os.path.dirname.path(os.path.abspath(__file__))
 IMAGE = os.path.join(base_dir, "webapp","img","IMG_1248.png")
@@ -152,4 +152,5 @@ def main():
     app.run_polling()
 
 if __name__=="__main__":
+
     main()
